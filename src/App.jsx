@@ -101,6 +101,20 @@ function App() {
                 placeholder="Il contenuto principale del tuo post..."
               />
             </label>
+
+            <label className="checkbox-label">
+              <input
+                name="public"
+                type="checkbox"
+                checked={postData.public}
+                onChange={handleChange}
+              />
+              Pubblica Subito
+            </label>
+
+            <button type="submit" disabled={loading}>
+              {loading ? 'Invio in corso...' : 'Invia Post'}
+            </button>
           </form>
         </div>
       </div>
