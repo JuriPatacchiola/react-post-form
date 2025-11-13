@@ -12,6 +12,7 @@ function App() {
       public: false,
     })
     const [loading, setLoading] = useState(false);
+    const [feedback, setFeedback] = useState({ message: '', type: '' });
   }
   return (
     <>
