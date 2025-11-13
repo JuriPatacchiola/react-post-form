@@ -69,7 +69,16 @@ function App() {
 
           <form onSubmit={handleSubmit}>
 
-
+            <label>Autore
+              <input
+                name="author"
+                type="text"
+                required
+                value={postData.author}
+                onChange={handleChange}
+                placeholder="Inserisci il tuo nome"
+              />
+            </label>
           </form>
         </div>
       </div>
