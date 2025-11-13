@@ -10,9 +10,19 @@ function App() {
       title: '',
       body: '',
       public: false,
-    })
+    });
+
     const [loading, setLoading] = useState(false);
     const [feedback, setFeedback] = useState({ message: '', type: '' });
+
+    const handleChange = (e) => {
+      const { name, value, type, checked } = e.target;
+      setPostData(prevData => ({
+        ...prevData,
+        [name]: type === 'checkbox' ? checked : value,
+      }));
+      setFeedback({ message: '', type: '' });
+    };
   }
   return (
     <>
