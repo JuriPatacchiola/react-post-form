@@ -79,6 +79,17 @@ function App() {
                 placeholder="Inserisci il tuo nome"
               />
             </label>
+
+            <label>Titolo
+              <input
+                name="title"
+                type="text"
+                required
+                value={postData.title}
+                onChange={handleChange}
+                placeholder="Titolo  del articolo"
+              />
+            </label>
           </form>
         </div>
       </div>
