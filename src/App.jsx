@@ -11,6 +11,7 @@ function App() {
       body: '',
       public: false,
     })
+    const [loading, setLoading] = useState(false);
   }
   return (
     <>
