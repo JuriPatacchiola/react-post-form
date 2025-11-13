@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 
@@ -28,7 +29,20 @@ function App() {
       e.preventDefault();
       setLoading(true);
       setFeedback({ message: '', type: '' });
-    }
+    };
+
+    axios.post(API_URL, postData)
+      .then(response => {
+        console.log("Dati inviati con successo all'API:", response.data);
+
+        setFeedback({
+          message: 'Post creato con successo! Controlla la console per i dati di risposta.',
+          type: 'success'
+        });
+
+        setPostData({ author: '', title: '', body: '', public: false });
+      })
+
   }
   return (
     <>
