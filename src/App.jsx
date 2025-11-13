@@ -23,6 +23,12 @@ function App() {
       }));
       setFeedback({ message: '', type: '' });
     };
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setLoading(true);
+      setFeedback({ message: '', type: '' });
+    }
   }
   return (
     <>
