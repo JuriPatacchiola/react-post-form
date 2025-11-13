@@ -90,6 +90,17 @@ function App() {
                 placeholder="Titolo  del articolo"
               />
             </label>
+
+            <label>Testo
+              <textarea
+                name="body"
+                rows="5"
+                required
+                value={postData.body}
+                onChange={handleChange}
+                placeholder="Il contenuto principale del tuo post..."
+              />
+            </label>
           </form>
         </div>
       </div>
