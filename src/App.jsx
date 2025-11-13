@@ -66,6 +66,11 @@ function App() {
           <p>Compila i campi per inviare un nuovo post al blog di prova.</p>
 
           <FeedbackMessage message={feedback.message} type={feedback.type} />
+
+          <form onSubmit={handleSubmit}>
+
+
+          </form>
         </div>
       </div>
 
