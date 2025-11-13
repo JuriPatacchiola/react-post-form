@@ -62,7 +62,10 @@ function App() {
     <>
       <div className="app-container">
         <div className="form-container">
+          <h1>Crea Nuovo Post</h1>
+          <p>Compila i campi per inviare un nuovo post al blog di prova.</p>
 
+          <FeedbackMessage message={feedback.message} type={feedback.type} />
         </div>
       </div>
 
