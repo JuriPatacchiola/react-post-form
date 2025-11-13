@@ -29,19 +29,33 @@ function App() {
       e.preventDefault();
       setLoading(true);
       setFeedback({ message: '', type: '' });
-    };
 
-    axios.post(API_URL, postData)
-      .then(response => {
-        console.log("Dati inviati con successo all'API:", response.data);
 
-        setFeedback({
-          message: 'Post creato con successo! Controlla la console per i dati di risposta.',
-          type: 'success'
+      axios.post(API_URL, postData)
+        .then(response => {
+          console.log("Dati inviati con successo all'API:", response.data);
+
+          setFeedback({
+            message: 'Post creato con successo! Controlla la console per i dati di risposta.',
+            type: 'success'
+          });
+
+          setPostData({ author: '', title: '', body: '', public: false });
+        })
+
+        .catch(error => {
+          console.error("Errore durante l'invio del post:", error.message, error.response?.data);
+
+          const errorMessage = error.response
+            ? `Errore API: Status ${error.response.status}`
+            : `Errore di rete: ${error.message}`;
+
+          setFeedback({ message: `Invio fallito: ${errorMessage}.`, type: 'error' });
+        })
+        .finally(() => {
+          setLoading(false);
         });
-
-        setPostData({ author: '', title: '', body: '', public: false });
-      })
+    };
 
   }
   return (
